@@ -97,8 +97,72 @@ function createHeroArea () {
 }
 
 
+function createMainContentContainer() {
+   const mainContainer = document.createElement('div');
 
+    mainContainer.appendChild(createMainHeader());
+    mainContainer.appendChild(createMainContent());
+    return mainContainer;
+   
+}
     
+function createMainHeader () {
+    //use this to style and position header area
+    const mainHeaderDiv = document.createElement('div');
+    mainHeaderDiv.classList.add('main-header-container');
+
+    const mainHeader = document.createElement('h2');
+    mainHeader.textContent = 'Try our Oboe pie, winner of the Zabli award 2019 & 2020'
+    mainHeader.classList.add('main-header');
+    
+    mainHeaderDiv.appendChild(mainHeader);
+    
+    return mainHeaderDiv;
+
+}
+
+function createMainContent () {
+    //use this to style and position content area
+    const mainContentDiv = document.createElement('div');
+    mainContentDiv.classList.add('main-content-div');
+    
+    let header = 'Finest local ingredients';
+    let mainText = 'All our pies are grown locally in local pie orchards tended to by the last 4000 generations of the family';
+    mainContentDiv.appendChild(createContentBlock(header, mainText));
+
+    header = 'Taste is flavour';
+    mainText = 'We believe that taste is key to flavour. That\’s why you’ll find taste in all our pies' 
+        + 'from the Beeswax pumpkin pie to the Rambuncious Raspberry pie.';
+    mainContentDiv.appendChild(createContentBlock(header, mainText));
+
+    header = 'Next day delivery on all pies';
+    mainText = 'We deliver all our pies the next day by forklift truck direct to your plate - we don\’t believe in doors!';
+    mainContentDiv.appendChild(createContentBlock(header, mainText));
+
+    header = 'Ethical robotics';
+    mainText = 'All our chef robots are paid a fair wage and we voluntarily comply with Turing RSTGANBD standards for robo-welfare';
+    mainContentDiv.appendChild(createContentBlock(header, mainText));
+     
+    return mainContentDiv;
+}
+
+function createContentBlock (header, mainText) {
+    const contentBlock = document.createElement('div');
+    contentBlock.classList.add('content-block');
+    
+    const contentHeader = document.createElement('h3');
+    contentHeader.textContent = header;
+    contentHeader.classList.add('content-header');
+
+    const contentBody = document.createElement('p');
+    contentBody.textContent = mainText;
+    contentBody.classList.add('content-body');
+
+    contentBlock.appendChild(contentHeader);
+    contentBlock.appendChild(contentBody);
+
+    return contentBlock;
+} 
 
 //Create main content area
     //Header
@@ -113,6 +177,7 @@ const initialLoad = () => {
 
     mainContainer.appendChild(createNavBar());
     mainContainer.appendChild(createHeroArea());
+    mainContainer.appendChild(createMainContentContainer());
 }
 
 export {
