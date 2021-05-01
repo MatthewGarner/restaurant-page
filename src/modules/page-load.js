@@ -127,11 +127,11 @@ function createMainContent () {
     mainContentDiv.classList.add('main-content-div');
     
     let header = 'Finest local ingredients';
-    let mainText = 'All our pies are grown locally in local pie orchards tended to by the last 4000 generations of the family';
+    let mainText = 'All our pies are grown locally in local pie orchards tended to by the last 4000 generations of the family.';
     mainContentDiv.appendChild(createContentBlock(header, mainText));
 
     header = 'Taste is flavour';
-    mainText = 'We believe that taste is key to flavour. That\’s why you’ll find taste in all our pies' 
+    mainText = 'We believe that taste is key to flavour. That\’s why you’ll find taste in all our pies ' 
         + 'from the Beeswax pumpkin pie to the Rambuncious Raspberry pie.';
     mainContentDiv.appendChild(createContentBlock(header, mainText));
 
@@ -140,7 +140,7 @@ function createMainContent () {
     mainContentDiv.appendChild(createContentBlock(header, mainText));
 
     header = 'Ethical robotics';
-    mainText = 'All our chef robots are paid a fair wage and we voluntarily comply with Turing RSTGANBD standards for robo-welfare';
+    mainText = 'All our chef robots are paid a fair wage and we voluntarily comply with Turing RSTGANBD standards for robo-welfare.';
     mainContentDiv.appendChild(createContentBlock(header, mainText));
      
     return mainContentDiv;
