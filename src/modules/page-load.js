@@ -72,15 +72,33 @@ function createNavLinks () {
     return navlinks;
 
 }
-
-
-//     Title with icon
-//     Links - Home, Contact, Menu 
  
-//Create Hero area
-    //Main image
-    //Hero text
-    //Main CTA button
+//create hero area with hero image as background (in css)
+function createHeroArea () {
+    const heroArea = document.createElement('div');
+    heroArea.id = 'hero-area';
+
+    //Add hero text
+    const heroText = document.createElement('h2');
+    heroText.textContent = 'The biggest, tastiest pies in all Yorkshire';
+    heroText.classList.add('hero-text');
+
+
+    //Add main CTA
+    const mainCTA = document.createElement('button');
+    mainCTA.textContent = 'Choose Pie';
+    mainCTA.classList.add('main-cta');
+    
+    heroArea.appendChild(heroText);
+    heroText.appendChild(mainCTA);
+
+
+    return heroArea;
+}
+
+
+
+    
 
 //Create main content area
     //Header
@@ -92,8 +110,9 @@ function createNavLinks () {
 
 const initialLoad = () => {
     const mainContainer = document.getElementById('content');
-    console.log(mainContainer);
+
     mainContainer.appendChild(createNavBar());
+    mainContainer.appendChild(createHeroArea());
 }
 
 export {
