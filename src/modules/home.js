@@ -106,7 +106,7 @@ function createMain() {
 function createHeroArea () {
     const heroArea = document.createElement('div');
     heroArea.id = 'hero-area';
-    heroArea.style.backgroundImage = "url('../imgs/hero-image.jpg')"
+    heroArea.style.backgroundImage = "url('/imgs/hero-image.jpg')";
    
     //Add hero text
     const heroText = document.createElement('h2');
