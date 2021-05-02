@@ -117,6 +117,13 @@ function createHeroArea () {
     const mainCTA = document.createElement('button');
     mainCTA.textContent = 'Choose Pie';
     mainCTA.classList.add('main-cta');
+    mainCTA.addEventListener('click', e => {
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        loadMenu();
+    });
     
     heroArea.appendChild(heroText);
     heroText.appendChild(mainCTA);
@@ -208,7 +215,7 @@ const initialLoad = () => {
 
 const loadHome = () => {
     const main = document.getElementById('main');
-    main.textContent = ""
+    main.textContent = "";
 
     main.appendChild(createHeroArea());
     main.appendChild(createMainContentContainer());

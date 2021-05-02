@@ -23,6 +23,7 @@ function createMenuItem (name, price, description) {
 
 function createMenu () {
     const menu = document.createElement('div');
+    menu.classList.add('menu');
 
     const menuItems = [
         createMenuItem(
@@ -57,7 +58,7 @@ function createMenu () {
 
 const loadMenu = () => {
     const main = document.getElementById('main');
-    main.textContent = ""
+    main.textContent = "";
 
     main.appendChild(createMenu());
     
