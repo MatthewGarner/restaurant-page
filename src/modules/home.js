@@ -106,9 +106,7 @@ function createMain() {
 function createHeroArea () {
     const heroArea = document.createElement('div');
     heroArea.id = 'hero-area';
-    heroArea.style.backgroundImage = "url('/imgs/hero-image.jpg')";
-    heroArea.style.backgroundSize = "100% 100%";
-
+   
     //Add hero text
     const heroText = document.createElement('h2');
     heroText.textContent = 'The biggest, tastiest pies in all Yorkshire';
