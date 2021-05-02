@@ -1,3 +1,6 @@
-import {initialLoad} from './modules/page-load';
+import {initialLoad} from './modules/home';
+
+
+
 
 initialLoad();

@@ -1,3 +1,6 @@
+import {loadMenu} from './menu';
+import {loadContact} from './contact';
+
 
 // create nav bar
 function createNavBar () {
@@ -15,7 +18,6 @@ function createNavBar () {
     return navBar;
 }
 
-
 function createMainIcon () {
     const mainIcon = document.createElement('img');
     mainIcon.src = 'imgs/main-icon.png';
@@ -30,6 +32,7 @@ function createNavTitle () {
     return navTitle;
 }
 
+
 function createNavLinks () {
     const navlinks = document.createElement('ul');
     
@@ -38,23 +41,42 @@ function createNavLinks () {
     const homeLink = document.createElement('a');
     homeLink.textContent = 'Home';
     homeLink.href = '#';
-
+    homeLink.addEventListener('click', e => {
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        loadHome();
+    });
     home.appendChild(homeLink);
 
     const menu = document.createElement('li');
-
     const menuLink = document.createElement('a');
     menuLink.textContent = 'Menu';
     menuLink.href = '#';
-
+    menuLink.addEventListener('click', e => {
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        loadMenu();
+    });
     menu.appendChild(menuLink);
 
     const contact = document.createElement('li');
-
     const contactLink = document.createElement('a');
     contactLink.textContent = 'Contact us';
     contactLink.href = '#';
-
+    contactLink.addEventListener('click', e => {
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        loadContact();
+    });
     contact.appendChild(contactLink);
 
     navlinks.appendChild(home);
@@ -72,7 +94,14 @@ function createNavLinks () {
     return navlinks;
 
 }
- 
+
+function createMain() {
+    const main = document.createElement('div');
+    main.id = "main";
+
+    return main;
+}
+
 //create hero area with hero image as background (in css)
 function createHeroArea () {
     const heroArea = document.createElement('div');
@@ -164,22 +193,28 @@ function createContentBlock (header, mainText) {
     return contentBlock;
 } 
 
-//Create main content area
-    //Header
-    //Create 4 content blocks
-        //small header
-        //para text
-    
-
 
 const initialLoad = () => {
     const mainContainer = document.getElementById('content');
 
     mainContainer.appendChild(createNavBar());
-    mainContainer.appendChild(createHeroArea());
-    mainContainer.appendChild(createMainContentContainer());
+
+    const main = createMain();
+    
+    main.appendChild(createHeroArea());
+    main.appendChild(createMainContentContainer());
+    mainContainer.appendChild(main);
+}
+
+const loadHome = () => {
+    const main = document.getElementById('main');
+    main.textContent = ""
+
+    main.appendChild(createHeroArea());
+    main.appendChild(createMainContentContainer());
 }
 
 export {
-    initialLoad
+    initialLoad,
+    loadHome
 }
